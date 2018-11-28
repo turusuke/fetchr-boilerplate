@@ -1,0 +1,29 @@
+{
+  "name": "simple-fetchr",
+  "version": "0.0.1",
+  "description": "Simple fetchr Sandbox",
+  "main": "index.html",
+  "scripts": {
+    "dev": "run-p dev:**",
+    "dev:agreed": "agreed-server --path spec/agreed.js --port 3010",
+    "dev:client:js": "parcel watch src/client/index.js -d build/client",
+    "dev:server:js": "parcel watch src/server/index.js -d build/server --target node",
+    "start": "run-s build:** dev",
+    "build:client": "parcel build src/client/index.js -d build/client",
+    "build:server": "parcel build src/server/index.js -d build/server --target node",
+    "dev:server": "node build/server/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "fetchr": "^0.5.37"
+  },
+  "devDependencies": {
+    "agreed": "^3.2.1",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^1.10.3",
+    "parcel-bundler": "^1.6.1"
+  }
+}
